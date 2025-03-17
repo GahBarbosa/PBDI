@@ -4,11 +4,15 @@ def somar(a, b):
 def subtrair(a, b):
   return a - b
 
+def multiplicar(a, b):
+    return a * b
+
 def menu():
   while True:
     print("\nEscolha uma opção:")
     print("1. Somar")
     print("2. Subtrair")
+    print("3. Multiplicar")
     print("0. Sair")
       
     opcao = input("Opção: ")
@@ -26,6 +30,8 @@ def menu():
           print(f"Resultado: {somar(a, b)}")
         elif opcao == "2":
           print(f"Resultado: {subtrair(a, b)}")
+        elif opcao == "3":
+          print(f"Resultado: {multiplicar(a, b)}")
           
       except ValueError:
         print("Entrada inválida. Certifique-se de digitar números válidos.")
