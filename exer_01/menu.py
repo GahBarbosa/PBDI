@@ -7,12 +7,18 @@ def subtrair(a, b):
 def multiplicar(a, b):
     return a * b
 
+def dividir(a, b):
+    if b == 0:
+        return "Erro: Divisão por zero"
+    return a / b
+
 def menu():
   while True:
     print("\nEscolha uma opção:")
     print("1. Somar")
     print("2. Subtrair")
     print("3. Multiplicar")
+    print("4. Dividir")
     print("0. Sair")
       
     opcao = input("Opção: ")
@@ -32,6 +38,8 @@ def menu():
           print(f"Resultado: {subtrair(a, b)}")
         elif opcao == "3":
           print(f"Resultado: {multiplicar(a, b)}")
+        elif opcao == "4":
+            print(f"Resultado: {dividir(a, b)}")
           
       except ValueError:
         print("Entrada inválida. Certifique-se de digitar números válidos.")
