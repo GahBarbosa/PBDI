@@ -19,3 +19,18 @@ BEGIN
     END IF;
 END;
 $$;
+
+-- 1.1 Programa que verifica se um número é múltiplo de 3 (usando CASE)
+DO $$ 
+DECLARE
+	valor INT := valor_aleatorio_entre(1, 100); 
+BEGIN 
+	RAISE NOTICE 'O valor gerado é: %', valor; 
+	CASE 
+		WHEN valor % 3 = 0 THEN
+			RAISE NOTICE '% é divisivel por 3', valor; 
+		ELSE 
+			RAISE NOTICE '% não é divisivel por 3', valor; 
+	END CASE; 
+END; 
+$$
