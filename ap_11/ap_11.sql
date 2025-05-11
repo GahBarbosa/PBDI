@@ -308,3 +308,38 @@ BEGIN
     RAISE NOTICE '%', resultado;
 END;
 $$;
+
+-- 1.6 Para cada procedimento criado, escreva um bloco anônimo que o coloca em execução.
+
+--1.2
+CALL sp_total_pedidos_cliente(1);
+
+-- 1.3
+DO $$
+DECLARE
+  total_pedidos INT;
+BEGIN
+  CALL sp_total_pedidos_cliente(1, total_pedidos);
+  RAISE NOTICE 'Total: % pedido(s)', total_pedidos;
+END;
+$$;
+
+-- 1.4
+DO $$
+DECLARE
+  cliente_id INT := 1;
+BEGIN
+  CALL sp_total_pedidos_cliente_inout(cliente_id);
+	RAISE NOTICE 'O cliente possui % pedido(s).', cliente_id;
+END;
+$$;
+
+-- 1.5
+DO $$
+DECLARE
+  resultado VARCHAR;
+BEGIN
+  CALL sp_cadastrar_clientes(resultado, 'Pedro', 'Ana', 'João');
+  RAISE NOTICE '%', resultado;
+END;
+$$;
